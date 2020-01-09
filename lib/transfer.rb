@@ -21,12 +21,12 @@ class Transfer
       if self.valid?
         @sender.balance -= @amount
         @receiver.balance+=@amount
-        stat = 'complete'
+        @status = 'complete'
       else
-        return "Transaction rejected. Please check your account balance."
+        @status = 'invalid'
       end
-      @status = stat
   end
+  @status != 'invalid' ?   : "Transaction rejected. Please check your account balance."
 end
       
     
