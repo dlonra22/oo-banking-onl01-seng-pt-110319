@@ -28,6 +28,9 @@ class Transfer
   end
   @status != "rejected" ? nil : "Transaction rejected. Please check your account balance."
 end
-      
+
+def reverse_transfer
+  if @@all.include?(self)
+    
     
 end
