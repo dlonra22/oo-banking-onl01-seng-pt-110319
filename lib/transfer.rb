@@ -23,10 +23,10 @@ class Transfer
         @receiver.balance+=@amount
         @status = "complete"
       else
-        @status = "invalid"
+        @status = "rejected"
       end
   end
-  @status != "invalid" ? nil : "Transaction rejected. Please check your account balance."
+  @status != "rejected" ? nil : "Transaction rejected. Please check your account balance."
 end
       
     
