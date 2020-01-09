@@ -29,10 +29,12 @@ class Transfer
   @status != "rejected" ? nil : "Transaction rejected. Please check your account balance."
 end
 
-def reverse_transfer
-  if @@all.include?(self)
-    @sender.balance += @amount
-    @receiver.balance-=@amount
-    @status = "reversed"
+  def reverse_transfer
+    if @@all.include?(self)
+      @sender.balance += @amount
+      @receiver.balance-=@amount
+      @status = "reversed"
+    end
   end
+
 end
