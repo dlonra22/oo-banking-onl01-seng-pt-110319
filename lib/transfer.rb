@@ -16,16 +16,16 @@ class Transfer
   
   def execute_transaction
    if @@all == []
-    stat = @status
-    if self.valid?
-      @sender.balance -= @amount
-      @receiver.balance+=@amount
-      stat = 'complete'
-    else
-      return "Transaction rejected. Please check your account balance."
-    end
-    @status = stat
-    @@all << self
+      @@all << self
+      stat = @status
+      if self.valid?
+        @sender.balance -= @amount
+        @receiver.balance+=@amount
+        stat = 'complete'
+      else
+        return "Transaction rejected. Please check your account balance."
+      end
+      @status = stat
   end
 end
       
